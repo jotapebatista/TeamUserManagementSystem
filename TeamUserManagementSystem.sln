@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamUserManagementSystem", "TeamUserManagementSystem.csproj", "{1F5CA268-02A7-4470-996D-5DAE23650335}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamUserManagementSystemTests", "..\TeamUserManagementSystemTests\TeamUserManagementSystemTests.csproj", "{8D331BFE-178F-42E2-A02E-EAD1317DA0D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamUserManagementSystemTests", "..\TeamUserManagementSystemTests\TeamUserManagementSystemTests.csproj", "{8D331BFE-178F-42E2-A02E-EAD1317DA0D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,29 +7,28 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
+
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamName)
-            </th>
-            <th></th>
+            <th>Team Name</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TeamId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TeamId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TeamId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TeamName)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TeamId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.TeamId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.TeamId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
