@@ -1,0 +1,33 @@
+﻿@model TeamUserManagementSystem.Models.User
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<div class="container">
+    <h1 class="mt-4">User Details</h1>
+
+    <dl class="row">
+        <dt class="col-sm-2">User Name</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserName)</dd>
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.UserEmail)</dd>
+        <dt class="col-sm-2">Teams</dt>
+        <dd class="col-sm-10">
+            @foreach (var team in Model.UserTeams)
+            {
+                @team.Team.TeamName
+                @if (!team.Equals(Model.UserTeams.Last()))
+                {
+                    @:,
+                }
+            }
+        </dd>
+
+    </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.UserId" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

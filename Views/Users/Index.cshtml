@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TeamUserManagementSystem.Models.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<div class="container">
+    <h1 class="mt-4">User List</h1>
+
+    <a asp-action="Create" class="btn btn-primary mb-3">Create New User</a>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Teams</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UserEmail)</td>
+                        <td>
+                            @foreach (var team in item.UserTeams)
+                            {
+                                @team.Team.TeamName
+                                @if (!team.Equals(item.UserTeams.Last()))
+                                {
+                                    @:,
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.UserId" class="btn btn-primary btn-sm">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-success btn-sm">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.UserId" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
